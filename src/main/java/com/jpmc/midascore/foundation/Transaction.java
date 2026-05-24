@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
+
     private long senderId;
     private long recipientId;
     private float amount;
+    private float incentive;
 
     public Transaction() {
     }
@@ -15,6 +17,7 @@ public class Transaction {
         this.senderId = senderId;
         this.recipientId = recipientId;
         this.amount = amount;
+        this.incentive = 0;
     }
 
     public long getSenderId() {
@@ -41,8 +44,11 @@ public class Transaction {
         this.amount = amount;
     }
 
-    @Override
-    public String toString() {
-        return "Transaction {senderId=" + senderId + ", recipientId=" + recipientId + ", amount=" + amount + "}";
+    public float getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
     }
 }

@@ -13,7 +13,6 @@ import org.springframework.test.annotation.DirtiesContext;
 @EmbeddedKafka(partitions = 1, brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"})
 public class TaskFourTests {
     static final Logger logger = LoggerFactory.getLogger(TaskFourTests.class);
-
     @Autowired
     private KafkaProducer kafkaProducer;
 
@@ -40,6 +39,7 @@ public class TaskFourTests {
         logger.info("kill this test once you find the answer");
         while (true) {
             Thread.sleep(20000);
+            
             logger.info("...");
         }
     }
